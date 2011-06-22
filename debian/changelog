@@ -1,3 +1,8 @@
+lyx (2.1~SVN) unstable; urgency = low
+
+* Upstream additions, focus on creating ePub support.
+* Daily build PPA added.
+
 lyx (2.0.0~rc3-1) unstable; urgency=low
 
   * New upstream release
