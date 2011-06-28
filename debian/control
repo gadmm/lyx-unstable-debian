@@ -1,4 +1,4 @@
-Surce: lyx-svn
+Surce: lyx-trunk-svn
 Maintainer: LyX-Devel Team <lyx-devel@oak-tree.us>
 Uploaders: Rob Oakes <lyx-devel@oak-tree.us
 Section: editors
@@ -14,9 +14,9 @@ Build-Depends: python (>= 2.6.6-3), debhelper (>= 8),
  libboost-iostreams-dev, libboost-regex-dev, libboost-test-dev,
  pkg-config, tex-common
 
-Package: lyx-svn
+Package: lyx-trunk-svn
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, lyx-common-svn (= ${source:Version}), xdg-utils
+Depends: ${shlibs:Depends}, ${misc:Depends}, lyx-common-trunk-svn (= ${source:Version}), xdg-utils
 Recommends: texlive-latex-recommended, texlive-latex-extra, texlive-science, texlive-generic-extra, texlive-fonts-recommended, preview-latex-style, dvipng, imagemagick, psutils, ghostscript, poppler-utils, ttf-lyx, evince-gtk | pdf-viewer, elyxer | tex4ht | hevea | tth | latex2html 
 Suggests: rcs, dvipost, groff, libtiff-tools, gnuhtml2latex, wv, chktex, noweb, menu, sgmltools-lite, linuxdoc-tools, writer2latex, latex2rtf, librsvg2-bin | inkscape
 Description: Document Processor
@@ -41,10 +41,10 @@ Description: Document Processor
   * sgmltools-lite: export SGML DocBook documents
   * wv: import MS Word documents
 
-Package: lyx-common-svn
+Package: lyx-common-trunk-svn
 Architecture: all
 Depends: ${misc:Depends}, ${python:Depends}
-Recommends: lyx-svn
+Recommends: lyx-trunk-svn
 Description: Architecture-independent files for LyX
  This package contains LyX's common files which are not
  architecture-dependent. See the lyx package for a description of LyX
