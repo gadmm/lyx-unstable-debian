@@ -1,7 +1,9 @@
-lyx (2.1~SVN) unstable; urgency = low
+lyx (2.1.0~SVN) unstable; urgency = low
 
 * Upstream additions, focus on creating ePub support.
 * Daily build PPA added.
+
+ -- Rob Oakes <lyx-devel@oak-tree.us>  Mon, 30 May 2011 10:39:00 +0200
 
 lyx (2.0.0~rc3-1) unstable; urgency=low
 
