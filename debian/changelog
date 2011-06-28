@@ -1,7 +1,7 @@
 lyx-trunk-svn (2.1.0~SVN) unstable; urgency=low
 
-* Upstream additions, focus on creating ePub support.
-* Daily build PPA added.
+  * Upstream additions, focus on creating ePub support.
+  * Daily build PPA added.
 
  -- Rob Oakes <lyx-devel@oak-tree.us>  Mon, 30 May 2011 10:39:00 +0200
 
