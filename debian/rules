@@ -1,0 +1,108 @@
+#!/usr/bin/make -f
+
+V_SUFFIX = 2.1
+
+DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+
+ifeq ($(DEB_BUILD_GNU_TYPE), $(DEB_HOST_GNU_TYPE))
+	CONFIGURE_OPTIONS += --build $(DEB_HOST_GNU_TYPE)
+else
+	CONFIGURE_OPTIONS += --build $(DEB_BUILD_GNU_TYPE) \
+		--host $(DEB_HOST_GNU_TYPE)
+endif
+
+CONFIGURE_OPTIONS += \
+	--with-version-suffix=$(V_SUFFIX) \
+	--prefix=/usr \
+	--mandir=/usr/share/man \
+	--disable-dependency-tracking \
+	--disable-rpath \
+	--enable-warnings \
+	--enable-nls \
+	--with-gnu-ld \
+	--with-aspell \
+	--with-hunspell \
+	--with-enchant \
+	--with-x \
+	--without-included-gettext \
+	--without-included-boost \
+	--without-included-mythes \
+	--enable-build-type=release \
+
+LDFLAGS += -Wl,-z,defs -Wl,--as-needed
+
+%:
+	dh --with quilt $@
+
+override_dh_auto_configure:
+	./autogen.sh 
+	set -e; if ! [ -f config/config.sub.backup ]; then \
+		mv config/config.sub config/config.sub.backup; \
+		ln -s /usr/share/misc/config.sub config/config.sub; \
+	fi
+
+	test -d build-tree || mkdir build-tree
+	cd build-tree && ../configure $(CONFIGURE_OPTIONS)
+
+override_dh_auto_build:
+	cd build-tree && $(MAKE)
+
+override_dh_auto_clean:
+	! test -e build-tree || rm -r build-tree
+	! test -f config/config.sub.backup || \
+		mv config/config.sub.backup config/config.sub
+
+# clean out compiled python code left around after building
+	find lib -name '*.pyc' -exec rm -v {} \;
+
+override_dh_auto_install:
+	cd build-tree && $(MAKE) install DESTDIR=`pwd`/../debian/lyx-common$(V_SUFFIX)
+
+# move binaries to arch package
+	mkdir -p debian/lyx$(V_SUFFIX)/usr/share
+	mv debian/lyx-common$(V_SUFFIX)/usr/bin debian/lyx$(V_SUFFIX)/usr/bin
+	mv debian/lyx-common$(V_SUFFIX)/usr/share/man debian/lyx$(V_SUFFIX)/usr/share/man
+
+# move fonts to font package
+	mkdir -p debian/ttf-lyx$(V_SUFFIX)/usr/share/fonts/truetype
+	mv debian/lyx-common$(V_SUFFIX)/usr/share/lyx$(V_SUFFIX)/fonts \
+		debian/ttf-lyx$(V_SUFFIX)/usr/share/fonts/truetype/ttf-lyx$(V_SUFFIX)
+
+# remove empty directory
+	rmdir debian/lyx-common$(V_SUFFIX)/usr/share/lyx$(V_SUFFIX)/images/commands
+
+# remove lyx distributed desktop file
+	rm -f debian/lyx-common$(V_SUFFIX)/usr/share/applications/lyx2.1.desktop
+	rmdir debian/lyx-common$(V_SUFFIX)/usr/share/applications
+
+# move tex files to correct place
+	mkdir -p debian/lyx-common$(V_SUFFIX)/usr/share/texmf/tex/latex
+	mv debian/lyx-common$(V_SUFFIX)/usr/share/lyx$(V_SUFFIX)/tex \
+		debian/lyx-common$(V_SUFFIX)/usr/share/texmf/tex/latex/lyx$(V_SUFFIX)
+
+# install bash completion
+	mkdir -p debian/lyx-common$(V_SUFFIX)/etc/bash_completion.d
+	cp debian/bash_completion debian/lyx-common$(V_SUFFIX)/etc/bash_completion.d/lyx$(V_SUFFIX)
+
+override_dh_installdocs:
+	mkdir -p debian/lyx$(V_SUFFIX)/usr/share/doc
+	ln -s lyx-common$(V_SUFFIX) debian/lyx$(V_SUFFIX)/usr/share/doc/lyx$(V_SUFFIX)
+
+	dh_installdocs
+
+	mkdir -p debian/ttf-lyx$(V_SUFFIX)/usr/share/doc/ttf-lyx$(V_SUFFIX)
+	mv debian/ttf-lyx$(V_SUFFIX)/usr/share/fonts/truetype/ttf-lyx$(V_SUFFIX)/ReadmeBaKoMa4LyX.txt \
+		debian/ttf-lyx$(V_SUFFIX)/usr/share/doc/ttf-lyx$(V_SUFFIX)/
+	rm debian/ttf-lyx$(V_SUFFIX)/usr/share/fonts/truetype/ttf-lyx$(V_SUFFIX)/BaKoMaFontLicense.txt
+
+override_dh_pysupport:
+	dh_pysupport /usr/share/lyx$(V_SUFFIX)
+
+override_dh_install:
+	dh_install
+	dh_installtex -plyx-common$(V_SUFFIX)
+	dh_installdefoma -pttf-lyx$(V_SUFFIX)
+
+override_dh_builddeb:
+	dh_builddeb -- -Z bzip2

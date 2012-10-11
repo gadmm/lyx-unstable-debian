@@ -1,0 +1,112 @@
+category truetype
+begin /usr/share/fonts/truetype/ttf-lyx2.1/cmex10.ttf
+  Family = cmex10
+  FontName = cmex10
+  Encoding = Symbol
+  Location = Magyar Dutch Spanish Czech Russian English Catalan Slovak Italian Turkish Danish Slovenian Basque Portuguese German Polish Swedish Norwegian French Finnish Greek
+  Charset = font-specific
+  GeneralFamily = Symbol
+  Weight = Medium
+  Width = Variable
+  Shape
+  Foundry = TeX
+  Priority = 20
+end
+begin /usr/share/fonts/truetype/ttf-lyx2.1/cmmi10.ttf
+  Family = cmmi10
+  FontName = cmmi10
+  Encoding = Symbol
+  Location = Magyar Dutch Spanish Czech Russian English Catalan Slovak Italian Turkish Danish Slovenian Basque Portuguese German Polish Swedish Norwegian French Finnish Greek
+  Charset = font-specific
+  GeneralFamily = Symbol
+  Weight = Medium
+  Width = Variable
+  Shape
+  Foundry = TeX
+  Priority = 20
+end
+begin /usr/share/fonts/truetype/ttf-lyx2.1/cmr10.ttf
+  Family = cmr10
+  FontName = cmr10
+  Encoding = Symbol
+  Location = Magyar Dutch Spanish Czech Russian English Catalan Slovak Italian Turkish Danish Slovenian Basque Portuguese German Polish Swedish Norwegian French Finnish Greek
+  Charset = font-specific
+  GeneralFamily = Symbol
+  Weight = Medium
+  Width = Variable
+  Shape
+  Foundry = TeX
+  Priority = 20
+end
+begin /usr/share/fonts/truetype/ttf-lyx2.1/cmsy10.ttf
+  Family = cmsy10
+  FontName = cmsy10
+  Encoding = Symbol
+  Location = Magyar Dutch Spanish Czech Russian English Catalan Slovak Italian Turkish Danish Slovenian Basque Portuguese German Polish Swedish Norwegian French Finnish Greek
+  Charset = font-specific
+  GeneralFamily = Symbol
+  Weight = Medium
+  Width = Variable
+  Shape
+  Foundry = TeX
+  Priority = 20
+end
+begin /usr/share/fonts/truetype/ttf-lyx2.1/msam10.ttf
+  Family = msam10
+  FontName = msam10
+  Encoding = Symbol
+  Location = Magyar Dutch Spanish Czech Russian English Catalan Slovak Italian Turkish Danish Slovenian Basque Portuguese German Polish Swedish Norwegian French Finnish Greek
+  Charset = font-specific
+  GeneralFamily = Symbol
+  Weight = Medium
+  Width = Variable
+  Shape
+  Foundry = TeX
+  Priority = 20
+end
+begin /usr/share/fonts/truetype/ttf-lyx2.1/msbm10.ttf
+  Family = msbm10
+  FontName = msbm10
+  Encoding = Symbol
+  Location = Magyar Dutch Spanish Czech Russian English Catalan Slovak Italian Turkish Danish Slovenian Basque Portuguese German Polish Swedish Norwegian French Finnish Greek
+  Charset = font-specific
+  GeneralFamily = Symbol
+  Weight = Medium
+  Width = Variable
+  Shape
+  Foundry = TeX
+  Priority = 20
+end
+begin /usr/share/fonts/truetype/ttf-lyx2.1/wasy10.ttf
+  Family = wasy10
+  FontName = wasy10
+  Encoding = Symbol
+  Location = Magyar Dutch Spanish Czech Russian English Catalan Slovak Italian Turkish Danish Slovenian Basque Portuguese German Polish Swedish Norwegian French Finnish Greek
+  Charset = font-specific
+  GeneralFamily = Symbol
+  Weight = Medium
+  Width = Variable
+  Shape
+  Foundry = TeX
+  Priority = 20
+end
+begin /usr/share/fonts/truetype/ttf-lyx2.1/esint10.ttf
+  Family = esint10
+  FontName = esint10
+  Encoding = Unicode
+  GeneralFamily = Symbol
+  Weight = Medium
+  Width = Variable
+  Shape = Normal Upright
+  Priority = 20
+end
+begin /usr/share/fonts/truetype/ttf-lyx2.1/eufm10.ttf
+  Family = eufm10
+  FontName = eufm10
+  Encoding = Unicode
+  GeneralFamily = Symbol
+  Weight = Medium
+  Width = Variable
+  Shape = Normal Upright
+  Priority = 20
+end
