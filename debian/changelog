@@ -1,3 +1,10 @@
+lyx2.1 (2.1.0~git-1~precise~ppa1) precise; urgency=low
+
+  * Change version string. 
+  * Prepare for automatic Launchpad builds.
+
+ -- Liviu Andronic <landronimirc@gmail.com>  Mon, 08 Oct 2012 19:02:22 +0200
+
 lyx2.1 (2.1.0~git20121008-1~precise~ppa1) precise; urgency=low
 
   * New GIT snapshot: 51cc826.
