@@ -70,7 +70,7 @@ override_dh_auto_install:
 		debian/ttf-lyx$(V_SUFFIX)/usr/share/fonts/truetype/ttf-lyx$(V_SUFFIX)
 
 # remove empty directory
-	rmdir debian/lyx-common$(V_SUFFIX)/usr/share/lyx$(V_SUFFIX)/images/commands
+#	rmdir debian/lyx-common$(V_SUFFIX)/usr/share/lyx$(V_SUFFIX)/images/commands
 
 # remove lyx distributed desktop file
 	rm -f debian/lyx-common$(V_SUFFIX)/usr/share/applications/lyx2.1.desktop
