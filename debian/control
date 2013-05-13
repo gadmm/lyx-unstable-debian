@@ -13,7 +13,7 @@ Build-Depends: python-support,
  autotools-dev, libqt4-dev, libboost-dev,
  libboost-filesystem-dev, libboost-signals-dev,
  libboost-iostreams-dev, libboost-regex-dev, libboost-test-dev,
- pkg-config, tex-common, defoma, libaspell-dev, libhunspell-dev, 
+ pkg-config, tex-common, libaspell-dev, libhunspell-dev, 
  automake, autoconf, gettext, libmagic-dev, bc
 
 Package: lyx2.1
@@ -62,7 +62,7 @@ Package: ttf-lyx2.1
 Architecture: all
 Section: fonts
 Pre-Depends: ${misc:Pre-Depends}, dpkg (>= 1.15.6)
-Depends: ${misc:Depends}, defoma
+Depends: ${misc:Depends}
 Conflicts: ttf-lyx, ttf-lyx1.6, ttf-lyx2.0
 Description: TrueType versions of some TeX fonts
  These fonts are needed for the visual math symbol display in
