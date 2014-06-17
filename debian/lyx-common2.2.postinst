@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+rm -f /usr/share/lyx2.2/lyxrc.defaults
+rm -f /usr/share/lyx2.2/packages.lst
+rm -f /usr/share/lyx2.2/textclass.lst
+
+#DEBHELPER#

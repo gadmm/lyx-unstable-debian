@@ -1,3 +1,9 @@
+lyx2.2 (2.2.0~git-1~precise~ppa1) precise; urgency=low
+
+  * New major release
+
+ -- Liviu Andronic <landronimirc@gmail.com>  Sun, 01 Jun 2014 19:02:22 +0200
+
 lyx2.1 (2.1.0~git-1~precise~ppa1) precise; urgency=low
 
   * Change version string. 

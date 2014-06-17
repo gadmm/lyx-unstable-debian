@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-V_SUFFIX = 2.1
+V_SUFFIX = 2.2
 
 DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
@@ -73,7 +73,7 @@ override_dh_auto_install:
 #	rmdir debian/lyx-common$(V_SUFFIX)/usr/share/lyx$(V_SUFFIX)/images/commands
 
 # remove lyx distributed desktop file
-	rm -f debian/lyx-common$(V_SUFFIX)/usr/share/applications/lyx2.1.desktop
+	rm -f debian/lyx-common$(V_SUFFIX)/usr/share/applications/lyx$(V_SUFFIX).desktop
 	rmdir debian/lyx-common$(V_SUFFIX)/usr/share/applications
 
 # move tex files to correct place

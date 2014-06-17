@@ -1,4 +1,4 @@
-Source: lyx2.1
+Source: lyx2.2
 Maintainer: Liviu Andronic <landronimirc@gmail.com>
 Uploaders: Per Olofsson <pelle@debian.org>, Sven Hoexter <hoexter@debian.org>
 Section: editors
@@ -16,11 +16,11 @@ Build-Depends: python-support,
  pkg-config, tex-common, libaspell-dev, libhunspell-dev, 
  automake, autoconf, gettext, libmagic-dev, bc
 
-Package: lyx2.1
+Package: lyx2.2
 Architecture: any
 Pre-Depends: dpkg (>= 1.15.6)
-Depends: ${shlibs:Depends}, ${misc:Depends}, lyx-common2.1 (= ${source:Version}), xdg-utils
-Recommends: texlive-latex-recommended, texlive-latex-extra, texlive-science, texlive-generic-extra, texlive-fonts-recommended, preview-latex-style, dvipng, imagemagick, psutils, ghostscript, poppler-utils, ttf-lyx | ttf-lyx1.6 | ttf-lyx2.0 | ttf-lyx2.1, evince-gtk | pdf-viewer, elyxer | tex4ht | hevea | tth | latex2html 
+Depends: ${shlibs:Depends}, ${misc:Depends}, lyx-common2.2 (= ${source:Version}), xdg-utils
+Recommends: texlive-latex-recommended, texlive-latex-extra, texlive-science, texlive-generic-extra, texlive-fonts-recommended, preview-latex-style, dvipng, imagemagick, psutils, ghostscript, poppler-utils, ttf-lyx | ttf-lyx1.6 | ttf-lyx2.0 | ttf-lyx2.1 | ttf-lyx2.2, evince-gtk | pdf-viewer, elyxer | tex4ht | hevea | tth | latex2html 
 Suggests: rcs, dvipost, groff, libtiff-tools, gnuhtml2latex, wv, chktex, noweb, sgmltools-lite, linuxdoc-tools, writer2latex, latex2rtf, librsvg2-bin | inkscape, texlive-xetex, etoolbox, texlive-luatex, libapp-makebeamerinfo-perl
 Description: Document Processor
  LyX is an almost WYSIWYG-frontend for LaTeX. It makes the power and
@@ -48,22 +48,22 @@ Description: Document Processor
   * libapp-makebeamerinfo-perl: extract Beamer transitions information 
     for use with Impressive
 
-Package: lyx-common2.1
+Package: lyx-common2.2
 Architecture: all
 Pre-Depends: dpkg (>= 1.15.6)
 Depends: ${misc:Depends}, ${python:Depends}
-Recommends: lyx2.1
+Recommends: lyx2.2
 Description: Architecture-independent files for LyX
  This package contains LyX's common files which are not
  architecture-dependent. See the lyx package for a description of LyX
  itself.
 
-Package: ttf-lyx2.1
+Package: ttf-lyx2.2
 Architecture: all
 Section: fonts
 Pre-Depends: ${misc:Pre-Depends}, dpkg (>= 1.15.6)
 Depends: ${misc:Depends}
-Conflicts: ttf-lyx, ttf-lyx1.6, ttf-lyx2.0
+Conflicts: ttf-lyx, ttf-lyx1.6, ttf-lyx2.0, ttf-lyx2.1
 Description: TrueType versions of some TeX fonts
  These fonts are needed for the visual math symbol display in
  LyX. They can also be used to display MathML in Gecko-based browsers
@@ -80,10 +80,10 @@ Description: TrueType versions of some TeX fonts
   * msbm10  - Extra math symbols, second series, including Blackboard Bold
   * wasy10  - Waldi symbol fonts
 
-Package: latex-xft-fonts2.1
+Package: latex-xft-fonts2.2
 Architecture: all
 Section: fonts
 Priority: extra
-Depends: ${misc:Depends}, ttf-lyx2.1
+Depends: ${misc:Depends}, ttf-lyx2.2
 Description: TrueType versions of some TeX fonts -- transitional package
  This package only exists to ease the transition to the ttf-lyx package.

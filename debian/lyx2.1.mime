@@ -1,1 +1,0 @@
-application/x-lyx; lyx2.1 %s; edit=lyx2.1 %s; nametemplate=%s.lyx; test=test "$DISPLAY" != ""; description="LyX Document"; priority=5
