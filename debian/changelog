@@ -1,6 +1,8 @@
-lyx-unstable (2.3.0unstable~git-1~xenial~ppa1) precise; urgency=low
+lyx-unstable (2.3.0unstable~git-1~xenial~ppa1) xenial; urgency=low
 
   * New experimental release
+    + Remove debian/patches/fix-manpage-errors - applied upstream.
+    + Refresh debian/patches/prefer-xdg-open.
 
  -- Guillaume Munch-Maccagnoni <gm@lyx.org>  Mon, 20 Mar 2017 21:05:26 +0200
 
