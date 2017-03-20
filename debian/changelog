@@ -1,3 +1,9 @@
+lyx-unstable (2.3.0unstable~git-1~xenial~ppa1) precise; urgency=low
+
+  * New experimental release
+
+ -- Guillaume Munch-Maccagnoni <gm@lyx.org>  Mon, 20 Mar 2017 21:05:26 +0200
+
 lyx2.2 (2.2.0~git-1~precise~ppa1) precise; urgency=low
 
   * New major release

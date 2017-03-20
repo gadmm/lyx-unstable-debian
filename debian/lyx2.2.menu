@@ -1,3 +1,0 @@
-?package(lyx2.2):needs="X11" section="Applications/Office" \
-  title="LyX Document Processor (2.2dev)" command="lyx2.2" \
-  icon="/usr/share/pixmaps/lyx2.2-32x32.xpm" hints="Word processors"
