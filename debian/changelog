@@ -1,4 +1,4 @@
-lyx-unstable (2.3.0unstable~git-1~xenial~ppa1) xenial; urgency=low
+lyx-unstable (2.3unstable-1ppa1) xenial; urgency=low
 
   * New experimental release
     + Remove debian/patches/fix-manpage-errors - applied upstream.
