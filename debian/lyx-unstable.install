@@ -1,2 +1,4 @@
-debian/lyx-unstable.desktop /usr/share/applications
+#debian/lyx-unstable.desktop /usr/share/applications
 debian/lyx-unstable-32x32.xpm /usr/share/pixmaps
+#debian/lyx-unstable-48x48.png /usr/share/pixmaps
+debian/lyx-unstable.svg /usr/share/pixmaps

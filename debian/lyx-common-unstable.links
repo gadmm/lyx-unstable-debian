@@ -1,2 +1,4 @@
-usr/share/lyx-unstable/images/lyx.png usr/share/icons/hicolor/48x48/apps/lyx-unstable.png
-usr/share/lyx-unstable/images/lyx.svg usr/share/icons/hicolor/scalable/apps/lyx-unstable.svg
+usr/share/mythes usr/share/lyx/thes
+usr/share/lyx/scripts/bash_completion usr/share/bash-completion/completions/lyx
+#usr/share/lyx-unstable/images/lyx.png usr/share/icons/hicolor/48x48/apps/lyx-unstable.png
+#usr/share/lyx-unstable/images/lyx.svg usr/share/icons/hicolor/scalable/apps/lyx-unstable.svg

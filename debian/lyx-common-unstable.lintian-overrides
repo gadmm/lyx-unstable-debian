@@ -1,0 +1,2 @@
+# Link is to external thesaurus
+lyx-common: package-contains-broken-symlink usr/share/lyx-unstable/thes ../mythes

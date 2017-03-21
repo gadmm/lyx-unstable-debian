@@ -1,27 +1,28 @@
 Source: lyx-unstable
 Maintainer: Guillaume Munch-Maccagnoni <gm@lyx.org>
-Uploaders: Per Olofsson <pelle@debian.org>, Sven Hoexter <hoexter@debian.org>
+Uploaders: Per Olofsson <pelle@debian.org>, Sven Hoexter <hoexter@debian.org>, Nick Andrik <nick.andrik@gmail.com>
 Section: editors
 Priority: optional
 Standards-Version: 3.9.0
 Vcs-Git: git://git.debian.org/git/pkg-lyx/lyx.git
 Vcs-Browser: http://git.debian.org/?p=pkg-lyx/lyx.git
 Homepage: http://www.lyx.org/
-Build-Depends: python-support,
+Build-Depends: python, dh-python,
  debhelper (>= 7.0.50), quilt (>= 0.46-7~),
  libz-dev, libx11-dev, libenchant-dev, libmythes-dev,
- autotools-dev, libqt4-dev, libboost-dev,
- libboost-filesystem-dev, libboost-signals-dev,
+ autotools-dev, 
+ qtbase5-dev, libqt5svg5-dev, qt5-default, 
+ libboost-dev, libboost-filesystem-dev, libboost-signals-dev,
  libboost-iostreams-dev, libboost-regex-dev, libboost-test-dev,
- pkg-config, tex-common, libaspell-dev, libhunspell-dev, 
- automake, autoconf, gettext, libmagic-dev, bc
+ pkg-config, tex-common, libaspell-dev, libhunspell-dev,
+ automake, autoconf, gettext, libmagic-dev, bc, libice-dev
 
 Package: lyx-unstable
 Architecture: any
-Pre-Depends: dpkg (>= 1.15.6)
+Pre-Depends: dpkg (>= 1.15.5)
 Depends: ${shlibs:Depends}, ${misc:Depends}, lyx-common-unstable (= ${source:Version}), xdg-utils
-Recommends: texlive-latex-recommended, texlive-latex-extra, texlive-science, texlive-generic-extra, texlive-fonts-recommended, preview-latex-style, dvipng, imagemagick, psutils, ghostscript, poppler-utils, ttf-lyx | ttf-lyx1.6 | ttf-lyx2.0 | ttf-lyx2.1 | ttf-lyx2.3 | ttf-lyx-unstable, evince-gtk | pdf-viewer, elyxer | tex4ht | hevea | tth | latex2html 
-Suggests: rcs, dvipost, groff, libtiff-tools, gnuhtml2latex, wv, chktex, noweb, sgmltools-lite, linuxdoc-tools, writer2latex, latex2rtf, librsvg2-bin | inkscape, texlive-xetex, etoolbox, texlive-luatex, libapp-makebeamerinfo-perl
+Recommends: texlive-latex-recommended, texlive-latex-extra, texlive-science, texlive-generic-recommended, texlive-generic-extra, texlive-fonts-recommended, preview-latex-style, dvipng, imagemagick, psutils, ghostscript, poppler-utils, fonts-lyx | ttf-lyx | ttf-lyx1.6 | ttf-lyx2.0 | ttf-lyx2.1 | ttf-lyx2.3 | fonts-lyx-unstable, evince-gtk | pdf-viewer, elyxer | tex4ht | hevea | tth | latex2html 
+Suggests: rcs, dvipost, groff, libtiff-tools, gnuhtml2latex, wv, chktex, noweb, sgmltools-lite, linuxdoc-tools, writer2latex, latex2rtf, librsvg2-bin | inkscape, texlive-xetex, etoolbox, texlive-luatex, libapp-makebeamerinfo-perl, latex-xcolor, lyx-unstable-dbg
 Description: Document Processor
  LyX is an almost WYSIWYG-frontend for LaTeX. It makes the power and
  typesetting quality of LaTeX available for people who are used to
@@ -44,13 +45,14 @@ Description: Document Processor
   * sgmltools-lite: export SGML DocBook documents
   * texlive-xetex, etoolbox: use the XeTeX typesetting system
   * wv: import MS Word documents
+  * latex-xcolor: for coloured change tracking
   * texlive-luatex: use the LuaTeX typesetting system
-  * libapp-makebeamerinfo-perl: extract Beamer transitions information 
+  * libapp-makebeamerinfo-perl: extract Beamer transitions information
     for use with Impressive
 
 Package: lyx-common-unstable
 Architecture: all
-Pre-Depends: dpkg (>= 1.15.6)
+Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends}, ${python:Depends}
 Recommends: lyx-unstable
 Description: Architecture-independent files for LyX
@@ -58,13 +60,22 @@ Description: Architecture-independent files for LyX
  architecture-dependent. See the lyx package for a description of LyX
  itself.
 
-Package: ttf-lyx-unstable
+Package: lyx-dbg-unstable
+Architecture: any
+Depends: ${misc:Depends}, lyx-unstable (= ${binary:Version})
+Section: debug
+Priority: extra
+Description: debugging symbols for LyX
+ This package contains debugging symbols for LyX.
+
+Package: fonts-lyx-unstable
 Architecture: all
+Multi-arch: foreign
 Section: fonts
-Pre-Depends: ${misc:Pre-Depends}, dpkg (>= 1.15.6)
+Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends}
-Conflicts: ttf-lyx, ttf-lyx1.6, ttf-lyx2.0, ttf-lyx2.1, ttf-lyx2.2, ttf-lyx2.3
-Description: TrueType versions of some TeX fonts
+Conflicts: fonts-lyx, ttf-lyx, ttf-lyx1.6, ttf-lyx2.0, ttf-lyx2.1, ttf-lyx2.2, ttf-lyx2.3
+Description: TrueType versions of some TeX fonts used by LyX
  These fonts are needed for the visual math symbol display in
  LyX. They can also be used to display MathML in Gecko-based browsers
  like Iceweasel.
@@ -79,11 +90,3 @@ Description: TrueType versions of some TeX fonts
   * msam10  - Extra math symbols, first series
   * msbm10  - Extra math symbols, second series, including Blackboard Bold
   * wasy10  - Waldi symbol fonts
-
-Package: latex-xft-fonts-unstable
-Architecture: all
-Section: fonts
-Priority: extra
-Depends: ${misc:Depends}, ttf-lyx-unstable
-Description: TrueType versions of some TeX fonts -- transitional package
- This package only exists to ease the transition to the ttf-lyx package.

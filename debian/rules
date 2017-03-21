@@ -29,11 +29,13 @@ CONFIGURE_OPTIONS += \
 	--without-included-boost \
 	--without-included-mythes \
 	--enable-build-type=release \
+	--enable-qt5 \
+
 
 LDFLAGS += -Wl,-z,defs -Wl,--as-needed
 
 %:
-	dh --with quilt $@
+	dh --with quilt,autotools_dev,python2,tex --builddirectory $@
 
 override_dh_auto_configure:
 	./autogen.sh 
@@ -65,16 +67,16 @@ override_dh_auto_install:
 	mv debian/lyx-common$(V_SUFFIX)/usr/share/man debian/lyx$(V_SUFFIX)/usr/share/man
 
 # move fonts to font package
-	mkdir -p debian/ttf-lyx$(V_SUFFIX)/usr/share/fonts/truetype
+	mkdir -p debian/fonts-lyx$(V_SUFFIX)/usr/share/fonts/truetype
 	mv debian/lyx-common$(V_SUFFIX)/usr/share/lyx$(V_SUFFIX)/fonts \
-		debian/ttf-lyx$(V_SUFFIX)/usr/share/fonts/truetype/ttf-lyx$(V_SUFFIX)
+		debian/fonts-lyx$(V_SUFFIX)/usr/share/fonts/truetype/fonts-lyx$(V_SUFFIX)
 
 # remove empty directory
 #	rmdir debian/lyx-common$(V_SUFFIX)/usr/share/lyx$(V_SUFFIX)/images/commands
 
 # remove lyx distributed desktop file
-	rm -f debian/lyx-common$(V_SUFFIX)/usr/share/applications/lyx$(V_SUFFIX).desktop
-	rmdir debian/lyx-common$(V_SUFFIX)/usr/share/applications
+#	rm -f debian/lyx-common$(V_SUFFIX)/usr/share/applications/lyx$(V_SUFFIX).desktop
+#	rmdir debian/lyx-common$(V_SUFFIX)/usr/share/applications
 
 # move tex files to correct place
 	mkdir -p debian/lyx-common$(V_SUFFIX)/usr/share/texmf/tex/latex
@@ -85,24 +87,29 @@ override_dh_auto_install:
 	mkdir -p debian/lyx-common$(V_SUFFIX)/etc/bash_completion.d
 	cp debian/bash_completion debian/lyx-common$(V_SUFFIX)/etc/bash_completion.d/lyx$(V_SUFFIX)
 
+# make sourced python scripts non-executable
+	chmod 644 debian/lyx-common$(V_SUFFIX)/usr/share/lyx$(V_SUFFIX)/scripts/*.py
+
+# handle font documentation
+	mkdir -p debian/fonts-lyx$(V_SUFFIX)/usr/share/doc/fonts-lyx$(V_SUFFIX)
+	mv debian/fonts-lyx$(V_SUFFIX)/usr/share/fonts/truetype/fonts-lyx$(V_SUFFIX)/ReadmeBaKoMa4LyX.txt \
+		debian/fonts-lyx$(V_SUFFIX)/usr/share/doc/fonts-lyx$(V_SUFFIX)/
+	rm debian/fonts-lyx$(V_SUFFIX)/usr/share/fonts/truetype/fonts-lyx$(V_SUFFIX)/BaKoMaFontLicense.txt
+
 override_dh_installdocs:
 	mkdir -p debian/lyx$(V_SUFFIX)/usr/share/doc
 	ln -s lyx-common$(V_SUFFIX) debian/lyx$(V_SUFFIX)/usr/share/doc/lyx$(V_SUFFIX)
 
+	mkdir -p debian/lyx-dbg$(V_SUFFIX)/usr/share/doc
+	ln -s lyx$(V_SUFFIX) debian/lyx-dbg$(V_SUFFIX)/usr/share/doc/lyx-dbg$(V_SUFFIX)
+
 	dh_installdocs
 
-	mkdir -p debian/ttf-lyx$(V_SUFFIX)/usr/share/doc/ttf-lyx$(V_SUFFIX)
-	mv debian/ttf-lyx$(V_SUFFIX)/usr/share/fonts/truetype/ttf-lyx$(V_SUFFIX)/ReadmeBaKoMa4LyX.txt \
-		debian/ttf-lyx$(V_SUFFIX)/usr/share/doc/ttf-lyx$(V_SUFFIX)/
-	rm debian/ttf-lyx$(V_SUFFIX)/usr/share/fonts/truetype/ttf-lyx$(V_SUFFIX)/BaKoMaFontLicense.txt
+override_dh_python2:
+	dh_python2 /usr/share/lyx$(V_SUFFIX)
 
-override_dh_pysupport:
-	dh_pysupport /usr/share/lyx$(V_SUFFIX)
-
-override_dh_install:
-	dh_install
+override_dh_installtex:
 	dh_installtex -plyx-common$(V_SUFFIX)
-	#dh_installdefoma -pttf-lyx$(V_SUFFIX)
 
-override_dh_builddeb:
-	dh_builddeb -- -Z bzip2
+override_dh_strip:
+	dh_strip --dbg-package=lyx-dbg$(V_SUFFIX)

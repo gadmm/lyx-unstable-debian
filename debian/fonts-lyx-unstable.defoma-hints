@@ -1,5 +1,5 @@
 category truetype
-begin /usr/share/fonts/truetype/ttf-lyx-unstable/cmex10.ttf
+begin /usr/share/fonts/truetype/fonts-lyx-unstable/cmex10.ttf
   Family = cmex10
   FontName = cmex10
   Encoding = Symbol
@@ -12,7 +12,7 @@ begin /usr/share/fonts/truetype/ttf-lyx-unstable/cmex10.ttf
   Foundry = TeX
   Priority = 20
 end
-begin /usr/share/fonts/truetype/ttf-lyx-unstable/cmmi10.ttf
+begin /usr/share/fonts/truetype/fonts-lyx-unstable/cmmi10.ttf
   Family = cmmi10
   FontName = cmmi10
   Encoding = Symbol
@@ -25,7 +25,7 @@ begin /usr/share/fonts/truetype/ttf-lyx-unstable/cmmi10.ttf
   Foundry = TeX
   Priority = 20
 end
-begin /usr/share/fonts/truetype/ttf-lyx-unstable/cmr10.ttf
+begin /usr/share/fonts/truetype/fonts-lyx-unstable/cmr10.ttf
   Family = cmr10
   FontName = cmr10
   Encoding = Symbol
@@ -38,7 +38,7 @@ begin /usr/share/fonts/truetype/ttf-lyx-unstable/cmr10.ttf
   Foundry = TeX
   Priority = 20
 end
-begin /usr/share/fonts/truetype/ttf-lyx-unstable/cmsy10.ttf
+begin /usr/share/fonts/truetype/fonts-lyx-unstable/cmsy10.ttf
   Family = cmsy10
   FontName = cmsy10
   Encoding = Symbol
@@ -51,7 +51,7 @@ begin /usr/share/fonts/truetype/ttf-lyx-unstable/cmsy10.ttf
   Foundry = TeX
   Priority = 20
 end
-begin /usr/share/fonts/truetype/ttf-lyx-unstable/msam10.ttf
+begin /usr/share/fonts/truetype/fonts-lyx-unstable/msam10.ttf
   Family = msam10
   FontName = msam10
   Encoding = Symbol
@@ -64,7 +64,7 @@ begin /usr/share/fonts/truetype/ttf-lyx-unstable/msam10.ttf
   Foundry = TeX
   Priority = 20
 end
-begin /usr/share/fonts/truetype/ttf-lyx-unstable/msbm10.ttf
+begin /usr/share/fonts/truetype/fonts-lyx-unstable/msbm10.ttf
   Family = msbm10
   FontName = msbm10
   Encoding = Symbol
@@ -77,7 +77,7 @@ begin /usr/share/fonts/truetype/ttf-lyx-unstable/msbm10.ttf
   Foundry = TeX
   Priority = 20
 end
-begin /usr/share/fonts/truetype/ttf-lyx-unstable/wasy10.ttf
+begin /usr/share/fonts/truetype/fonts-lyx-unstable/wasy10.ttf
   Family = wasy10
   FontName = wasy10
   Encoding = Symbol
@@ -90,7 +90,7 @@ begin /usr/share/fonts/truetype/ttf-lyx-unstable/wasy10.ttf
   Foundry = TeX
   Priority = 20
 end
-begin /usr/share/fonts/truetype/ttf-lyx-unstable/esint10.ttf
+begin /usr/share/fonts/truetype/fonts-lyx-unstable/esint10.ttf
   Family = esint10
   FontName = esint10
   Encoding = Unicode
@@ -100,7 +100,7 @@ begin /usr/share/fonts/truetype/ttf-lyx-unstable/esint10.ttf
   Shape = Normal Upright
   Priority = 20
 end
-begin /usr/share/fonts/truetype/ttf-lyx-unstable/eufm10.ttf
+begin /usr/share/fonts/truetype/fonts-lyx-unstable/eufm10.ttf
   Family = eufm10
   FontName = eufm10
   Encoding = Unicode
