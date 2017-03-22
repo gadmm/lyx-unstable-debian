@@ -59,36 +59,36 @@ override_dh_auto_clean:
 	find lib -name '*.pyc' -exec rm -v {} \;
 
 override_dh_auto_install:
-	cd build-tree && $(MAKE) install DESTDIR=`pwd`/../debian/lyx-common$(V_SUFFIX)
+	cd build-tree && $(MAKE) install DESTDIR=`pwd`/../debian/lyx$(V_SUFFIX)-common
 
 # move binaries to arch package
 	mkdir -p debian/lyx$(V_SUFFIX)/usr/share
-	mv debian/lyx-common$(V_SUFFIX)/usr/bin debian/lyx$(V_SUFFIX)/usr/bin
-	mv debian/lyx-common$(V_SUFFIX)/usr/share/man debian/lyx$(V_SUFFIX)/usr/share/man
+	mv debian/lyx$(V_SUFFIX)-common/usr/bin debian/lyx$(V_SUFFIX)/usr/bin
+	mv debian/lyx$(V_SUFFIX)-common/usr/share/man debian/lyx$(V_SUFFIX)/usr/share/man
 
 # move fonts to font package
 	mkdir -p debian/fonts-lyx$(V_SUFFIX)/usr/share/fonts/truetype
-	mv debian/lyx-common$(V_SUFFIX)/usr/share/lyx$(V_SUFFIX)/fonts \
+	mv debian/lyx$(V_SUFFIX)-common/usr/share/lyx$(V_SUFFIX)/fonts \
 		debian/fonts-lyx$(V_SUFFIX)/usr/share/fonts/truetype/fonts-lyx$(V_SUFFIX)
 
 # remove empty directory
-#	rmdir debian/lyx-common$(V_SUFFIX)/usr/share/lyx$(V_SUFFIX)/images/commands
+#	rmdir debian/lyx$(V_SUFFIX)-common/usr/share/lyx$(V_SUFFIX)/images/commands
 
 # remove lyx distributed desktop file
-#	rm -f debian/lyx-common$(V_SUFFIX)/usr/share/applications/lyx$(V_SUFFIX).desktop
-#	rmdir debian/lyx-common$(V_SUFFIX)/usr/share/applications
+#	rm -f debian/lyx$(V_SUFFIX)-common/usr/share/applications/lyx$(V_SUFFIX).desktop
+#	rmdir debian/lyx$(V_SUFFIX)-common/usr/share/applications
 
 # move tex files to correct place
-	mkdir -p debian/lyx-common$(V_SUFFIX)/usr/share/texmf/tex/latex
-	mv debian/lyx-common$(V_SUFFIX)/usr/share/lyx$(V_SUFFIX)/tex \
-		debian/lyx-common$(V_SUFFIX)/usr/share/texmf/tex/latex/lyx$(V_SUFFIX)
+	mkdir -p debian/lyx$(V_SUFFIX)-common/usr/share/texmf/tex/latex
+	mv debian/lyx$(V_SUFFIX)-common/usr/share/lyx$(V_SUFFIX)/tex \
+		debian/lyx$(V_SUFFIX)-common/usr/share/texmf/tex/latex/lyx$(V_SUFFIX)
 
 # install bash completion
-	mkdir -p debian/lyx-common$(V_SUFFIX)/etc/bash_completion.d
-	cp debian/bash_completion debian/lyx-common$(V_SUFFIX)/etc/bash_completion.d/lyx$(V_SUFFIX)
+	mkdir -p debian/lyx$(V_SUFFIX)-common/etc/bash_completion.d
+	cp debian/bash_completion debian/lyx$(V_SUFFIX)-common/etc/bash_completion.d/lyx$(V_SUFFIX)
 
 # make sourced python scripts non-executable
-	chmod 644 debian/lyx-common$(V_SUFFIX)/usr/share/lyx$(V_SUFFIX)/scripts/*.py
+	chmod 644 debian/lyx$(V_SUFFIX)-common/usr/share/lyx$(V_SUFFIX)/scripts/*.py
 
 # handle font documentation
 	mkdir -p debian/fonts-lyx$(V_SUFFIX)/usr/share/doc/fonts-lyx$(V_SUFFIX)
@@ -98,10 +98,10 @@ override_dh_auto_install:
 
 override_dh_installdocs:
 	mkdir -p debian/lyx$(V_SUFFIX)/usr/share/doc
-	ln -s lyx-common$(V_SUFFIX) debian/lyx$(V_SUFFIX)/usr/share/doc/lyx$(V_SUFFIX)
+	ln -s lyx$(V_SUFFIX)-common debian/lyx$(V_SUFFIX)/usr/share/doc/lyx$(V_SUFFIX)
 
-	mkdir -p debian/lyx-dbg$(V_SUFFIX)/usr/share/doc
-	ln -s lyx$(V_SUFFIX) debian/lyx-dbg$(V_SUFFIX)/usr/share/doc/lyx-dbg$(V_SUFFIX)
+	mkdir -p debian/lyx$(V_SUFFIX)-dbg/usr/share/doc
+	ln -s lyx$(V_SUFFIX) debian/lyx$(V_SUFFIX)-dbg/usr/share/doc/lyx$(V_SUFFIX)-dbg
 
 	dh_installdocs
 
@@ -109,7 +109,7 @@ override_dh_python2:
 	dh_python2 /usr/share/lyx$(V_SUFFIX)
 
 override_dh_installtex:
-	dh_installtex -plyx-common$(V_SUFFIX)
+	dh_installtex -plyx$(V_SUFFIX)-common
 
 override_dh_strip:
-	dh_strip --dbg-package=lyx-dbg$(V_SUFFIX)
+	dh_strip --dbg-package=lyx$(V_SUFFIX)-dbg

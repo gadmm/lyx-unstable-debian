@@ -19,7 +19,7 @@ Build-Depends: python, dh-python,
 Package: lyx-unstable
 Architecture: any
 Pre-Depends: dpkg (>= 1.15.5)
-Depends: ${shlibs:Depends}, ${misc:Depends}, lyx-common-unstable (= ${source:Version}), xdg-utils
+Depends: ${shlibs:Depends}, ${misc:Depends}, lyx-unstable-common (= ${source:Version}), xdg-utils
 Recommends: texlive-latex-recommended, texlive-latex-extra, texlive-science, texlive-generic-recommended, texlive-generic-extra, texlive-fonts-recommended, preview-latex-style, dvipng, imagemagick, psutils, ghostscript, poppler-utils, fonts-lyx | ttf-lyx | ttf-lyx1.6 | ttf-lyx2.0 | ttf-lyx2.1 | ttf-lyx2.3 | fonts-lyx-unstable, evince-gtk | pdf-viewer, elyxer | tex4ht | hevea | tth | latex2html 
 Suggests: rcs, dvipost, groff, libtiff-tools, gnuhtml2latex, wv, chktex, noweb, sgmltools-lite, linuxdoc-tools, writer2latex, latex2rtf, librsvg2-bin | inkscape, texlive-xetex, etoolbox, texlive-luatex, libapp-makebeamerinfo-perl, latex-xcolor, lyx-unstable-dbg
 Description: Document Processor
@@ -49,7 +49,7 @@ Description: Document Processor
   * libapp-makebeamerinfo-perl: extract Beamer transitions information
     for use with Impressive
 
-Package: lyx-common-unstable
+Package: lyx-unstable-common
 Architecture: all
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends}, ${python:Depends}
@@ -59,7 +59,7 @@ Description: Architecture-independent files for LyX
  architecture-dependent. See the lyx package for a description of LyX
  itself.
 
-Package: lyx-dbg-unstable
+Package: lyx-unstable-dbg
 Architecture: any
 Depends: ${misc:Depends}, lyx-unstable (= ${binary:Version})
 Section: debug
