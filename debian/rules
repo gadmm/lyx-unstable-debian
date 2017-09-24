@@ -30,6 +30,7 @@ CONFIGURE_OPTIONS += \
 	--without-included-mythes \
 	--enable-build-type=release \
 	--enable-qt5 \
+	--enable-maintainer-mode \
 
 
 LDFLAGS += -Wl,-z,defs -Wl,--as-needed
