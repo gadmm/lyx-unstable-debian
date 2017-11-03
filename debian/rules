@@ -25,7 +25,6 @@ CONFIGURE_OPTIONS += \
 	--with-hunspell \
 	--with-enchant \
 	--with-x \
-	--without-included-gettext \
 	--without-included-boost \
 	--without-included-mythes \
 	--enable-build-type=release \
