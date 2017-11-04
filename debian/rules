@@ -48,7 +48,7 @@ override_dh_auto_configure:
 	cd build-tree && ../configure $(CONFIGURE_OPTIONS)
 
 override_dh_auto_build:
-	cd build-tree && $(MAKE) -k
+	cd build-tree && $(MAKE) -k -j16
 
 override_dh_auto_clean:
 	! test -e build-tree || rm -r build-tree
