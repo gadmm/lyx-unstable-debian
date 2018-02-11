@@ -1,12 +1,12 @@
 Source: lyx-unstable
 Maintainer: Guillaume Munch-Maccagnoni <gm@lyx.org>
-Uploaders: Per Olofsson <pelle@debian.org>, Sven Hoexter <hoexter@debian.org>, Nick Andrik <nick.andrik@gmail.com>
+Uploaders: Guillaume Munch-Maccagnoni <gm@lyx.org>
 Section: editors
 Priority: optional
 Standards-Version: 3.9.0
-Vcs-Git: git://git.debian.org/git/pkg-lyx/lyx.git
-Vcs-Browser: http://git.debian.org/?p=pkg-lyx/lyx.git
-Homepage: http://www.lyx.org/
+Vcs-Git: https://github.com/gadmm/lyx-unstable-debian.git
+Vcs-Browser: https://github.com/gadmm/lyx-unstable-debian/
+Homepage: https://github.com/gadmm/lyx-unstable/
 Build-Depends: python, dh-python,
  debhelper (>= 7.0.50), quilt (>= 0.46-7~),
  libz-dev, libx11-dev, libenchant-dev, libmythes-dev,
@@ -23,20 +23,39 @@ Depends: ${shlibs:Depends}, ${misc:Depends}, lyx-unstable-common (= ${source:Ver
 Recommends: texlive-latex-recommended, texlive-latex-extra, texlive-science, texlive-generic-recommended, texlive-generic-extra, texlive-fonts-recommended, preview-latex-style, dvipng, imagemagick, psutils, ghostscript, poppler-utils, fonts-lyx | ttf-lyx | ttf-lyx1.6 | ttf-lyx2.0 | ttf-lyx2.1 | ttf-lyx2.3 | fonts-lyx-unstable, evince-gtk | pdf-viewer, elyxer | tex4ht | hevea | tth | latex2html 
 Suggests: rcs, dvipost, groff, libtiff-tools, gnuhtml2latex, wv, chktex, noweb, sgmltools-lite, linuxdoc-tools, writer2latex, latex2rtf, librsvg2-bin | inkscape, texlive-xetex, etoolbox, texlive-luatex, libapp-makebeamerinfo-perl, latex-xcolor, lyx-unstable-dbg
 Description: Document Processor
- LyX is an almost WYSIWYG-frontend for LaTeX. It makes the power and
- typesetting quality of LaTeX available for people who are used to
- word processors. Since LyX supports LaTeX's concept of general
- mark-ups, it is even easier and faster to create professional quality
- documents with it than with usual word processors. It is also
- possible to use LaTeX commands within LyX, so nothing of LaTeX's
- power is lost.
+ LyX 2.3unstable is a branch of LyX master (2.4dev) that reads, edits and
+ writes the current stable LyX format (2.2). It contains all the new features
+ apart from those that require a new file format, as well as some new features
+ and additional bug fixes.
+ .
+ LyX is a document processor and equation editor that encourages an approach to
+ writing based on the structure of your documents, rather than their
+ appearance.
+ .
+ LyX is for people who write and want their writing to look great,
+ right out of the box. No more endless tinkering with formatting details,
+ “finger painting” font attributes or futzing around with page boundaries. You
+ just write. LyX's semantic approach helps your article, thesis or book mature
+ from the early scribbles, to a draft full of notes and change-tracked
+ revisions, to a final camera-ready version.
+ .
+ In the background, Prof. Knuth's legendary TeX typesetting engine makes you
+ look good. LyX's output—or richly cross-referenced PDF, just as readily
+ produced—looks like nothing else. Gone are the days of industrially bland
+ .docs, all looking similarly not-quite-right, yet coming out unpredictably
+ different on different printer drivers. Gone are the crashes “eating” your
+ dissertation the evening before going to press.
+ .
+ LyX is stable and fully featured. It is a multi-platform, fully
+ internationalized application running natively on Unix/Linux and the Macintosh
+ and modern Windows platforms.
  .
  You can extend the functionality of LyX by installing these packages:
+  * inkscape, librsvg2-bin: use the SVG image format in LyX documents
   * chktex: check for typographical errors
   * dvipost: display tracked changes in DVI format output
   * gnuhtml2latex: import HTML documents
   * groff: improved table formatting in plain text exports
-  * librsvg2-bin, inkscape: use the SVG image format in LyX documents
   * linuxdoc-tools: export SGML LinuxDoc documents
   * mythes-*: use the OpenOffice.org/LibreOffice Thesaurus
   * noweb: import noweb files
