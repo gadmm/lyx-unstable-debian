@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=LyX Document Processor (2.3unstable)
+Name=LyX Document Processor (2.4unstable)
 GenericName=Document Processor
 Comment=High-level LaTeX frontend
 Exec=lyx-unstable %F

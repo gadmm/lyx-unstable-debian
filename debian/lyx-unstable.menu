@@ -1,3 +1,3 @@
 ?package(lyx-unstable):needs="X11" section="Applications/Office" \
-  title="LyX Document Processor (2.3unstable)" command="lyx-unstable" \
+  title="LyX Document Processor (2.4unstable)" command="lyx-unstable" \
   icon="/usr/share/pixmaps/lyx-unstable-32x32.xpm" hints="Word processors"
