@@ -1,3 +1,9 @@
+lyx-2.3unstable (2.3unstable-1ppa1) xenial; urgency=low
+
+  * New release
+
+ -- Guillaume Munch-Maccagnoni <gm@lyx.org>  Mon, 12 Feb 2018 00:55:10 +0100
+
 lyx-unstable (2.3unstable-1ppa1) xenial; urgency=low
 
   * New experimental release

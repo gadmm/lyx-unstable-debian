@@ -1,1 +1,1 @@
-application/x-lyx; lyx-unstable %s; edit=lyx-unstable %s; nametemplate=%s.lyx; test=test "$DISPLAY" != ""; description="LyX Document"; priority=5
+application/x-lyx; lyx-2.3unstable %s; edit=lyx-2.3unstable %s; nametemplate=%s.lyx; test=test "$DISPLAY" != ""; description="LyX Document"; priority=5

@@ -1,4 +1,4 @@
-Source: lyx-unstable
+Source: lyx-2.3unstable
 Maintainer: Guillaume Munch-Maccagnoni <gm@lyx.org>
 Uploaders: Guillaume Munch-Maccagnoni <gm@lyx.org>
 Section: editors
@@ -16,12 +16,12 @@ Build-Depends: python, dh-python,
  pkg-config, tex-common, libaspell-dev, libhunspell-dev,
  automake, autoconf, gettext, libmagic-dev, bc, libice-dev
 
-Package: lyx-unstable
+Package: lyx-2.3unstable
 Architecture: any
 Pre-Depends: dpkg (>= 1.15.5)
-Depends: ${shlibs:Depends}, ${misc:Depends}, lyx-unstable-common (= ${source:Version}), xdg-utils
-Recommends: texlive-latex-recommended, texlive-latex-extra, texlive-science, texlive-generic-recommended, texlive-generic-extra, texlive-fonts-recommended, preview-latex-style, dvipng, imagemagick, psutils, ghostscript, poppler-utils, fonts-lyx | ttf-lyx | ttf-lyx1.6 | ttf-lyx2.0 | ttf-lyx2.1 | ttf-lyx2.3 | fonts-lyx-unstable, evince-gtk | pdf-viewer, elyxer | tex4ht | hevea | tth | latex2html 
-Suggests: rcs, dvipost, groff, libtiff-tools, gnuhtml2latex, wv, chktex, noweb, sgmltools-lite, linuxdoc-tools, writer2latex, latex2rtf, librsvg2-bin | inkscape, texlive-xetex, etoolbox, texlive-luatex, libapp-makebeamerinfo-perl, latex-xcolor, lyx-unstable-dbg
+Depends: ${shlibs:Depends}, ${misc:Depends}, lyx-2.3unstable-common (= ${source:Version}), xdg-utils
+Recommends: texlive-latex-recommended, texlive-latex-extra, texlive-science, texlive-generic-recommended, texlive-generic-extra, texlive-fonts-recommended, preview-latex-style, dvipng, imagemagick, psutils, ghostscript, poppler-utils, fonts-lyx | ttf-lyx | ttf-lyx1.6 | ttf-lyx2.0 | ttf-lyx2.1 | ttf-lyx2.3 | fonts-lyx-unstable | fonts-lyx-2.3unstable, evince-gtk | pdf-viewer, elyxer | tex4ht | hevea | tth | latex2html
+Suggests: rcs, dvipost, groff, libtiff-tools, gnuhtml2latex, wv, chktex, noweb, sgmltools-lite, linuxdoc-tools, writer2latex, latex2rtf, librsvg2-bin | inkscape, texlive-xetex, etoolbox, texlive-luatex, libapp-makebeamerinfo-perl, latex-xcolor, lyx-2.3unstable-dbg
 Description: Document Processor
  LyX 2.3unstable is a branch of LyX master (2.4dev) that reads, edits and
  writes the current stable LyX format (2.2). It contains all the new features
@@ -68,31 +68,31 @@ Description: Document Processor
   * libapp-makebeamerinfo-perl: extract Beamer transitions information
     for use with Impressive
 
-Package: lyx-unstable-common
+Package: lyx-2.3unstable-common
 Architecture: all
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends}, ${python:Depends}
-Recommends: lyx-unstable
+Recommends: lyx-2.3unstable
 Description: Architecture-independent files for LyX
  This package contains LyX's common files which are not
  architecture-dependent. See the lyx package for a description of LyX
  itself.
 
-Package: lyx-unstable-dbg
+Package: lyx-2.3unstable-dbg
 Architecture: any
-Depends: ${misc:Depends}, lyx-unstable (= ${binary:Version})
+Depends: ${misc:Depends}, lyx-2.3unstable (= ${binary:Version})
 Section: debug
 Priority: extra
 Description: debugging symbols for LyX
  This package contains debugging symbols for LyX.
 
-Package: fonts-lyx-unstable
+Package: fonts-lyx-2.3unstable
 Architecture: all
 Multi-arch: foreign
 Section: fonts
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends}
-Conflicts: fonts-lyx, ttf-lyx, ttf-lyx1.6, ttf-lyx2.0, ttf-lyx2.1, ttf-lyx2.2, ttf-lyx2.3
+Conflicts: fonts-lyx, fonts-lyx-unstable, ttf-lyx, ttf-lyx1.6, ttf-lyx2.0, ttf-lyx2.1, ttf-lyx2.2, ttf-lyx2.3
 Description: TrueType versions of some TeX fonts used by LyX
  These fonts are needed for the visual math symbol display in
  LyX. They can also be used to display MathML in Gecko-based browsers
