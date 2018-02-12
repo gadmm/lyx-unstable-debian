@@ -20,7 +20,7 @@ Package: lyx-unstable
 Architecture: any
 Pre-Depends: dpkg (>= 1.15.5)
 Depends: ${shlibs:Depends}, ${misc:Depends}, lyx-unstable-common (= ${source:Version}), xdg-utils
-Recommends: texlive-latex-recommended, texlive-latex-extra, texlive-science, texlive-generic-recommended, texlive-generic-extra, texlive-fonts-recommended, preview-latex-style, dvipng, imagemagick, psutils, ghostscript, poppler-utils, fonts-lyx | ttf-lyx | ttf-lyx1.6 | ttf-lyx2.0 | ttf-lyx2.1 | ttf-lyx2.3 | fonts-lyx-unstable, evince-gtk | pdf-viewer, elyxer | tex4ht | hevea | tth | latex2html 
+Recommends: texlive-latex-recommended, texlive-latex-extra, texlive-science, texlive-generic-recommended, texlive-generic-extra, texlive-fonts-recommended, preview-latex-style, dvipng, imagemagick, psutils, ghostscript, poppler-utils, fonts-lyx | ttf-lyx | ttf-lyx1.6 | ttf-lyx2.0 | ttf-lyx2.1 | ttf-lyx2.3 | fonts-lyx-2.3unstable | fonts-lyx-unstable, evince-gtk | pdf-viewer, elyxer | tex4ht | hevea | tth | latex2html 
 Suggests: rcs, dvipost, groff, libtiff-tools, gnuhtml2latex, wv, chktex, noweb, sgmltools-lite, linuxdoc-tools, writer2latex, latex2rtf, librsvg2-bin | inkscape, texlive-xetex, etoolbox, texlive-luatex, libapp-makebeamerinfo-perl, latex-xcolor, lyx-unstable-dbg
 Description: Document Processor
  LyX 2.3unstable is a branch of LyX master (2.4dev) that reads, edits and
@@ -92,7 +92,7 @@ Multi-arch: foreign
 Section: fonts
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends}
-Conflicts: fonts-lyx, ttf-lyx, ttf-lyx1.6, ttf-lyx2.0, ttf-lyx2.1, ttf-lyx2.2, ttf-lyx2.3
+Conflicts: fonts-lyx, fonts-lyx-2.3unstable, ttf-lyx, ttf-lyx1.6, ttf-lyx2.0, ttf-lyx2.1, ttf-lyx2.2, ttf-lyx2.3
 Description: TrueType versions of some TeX fonts used by LyX
  These fonts are needed for the visual math symbol display in
  LyX. They can also be used to display MathML in Gecko-based browsers
